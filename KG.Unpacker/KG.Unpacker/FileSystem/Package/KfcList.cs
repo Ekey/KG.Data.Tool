@@ -6,15 +6,14 @@ namespace KG.Unpacker
 {
     class KfcList
     {
-        private static String m_Path = Utils.iGetApplicationPath() + @"\Projects\";
+        private static String m_ProjectFile = Utils.iGetApplicationPath() + @"\Projects\FileNames.list";
 
         private static Dictionary<UInt64, String> m_HashList = new Dictionary<UInt64, String>();
 
-        public static void iLoadProject(String m_ProjectFile)
+        public static void iLoadProject()
         {
             String m_Line = null;
-            m_ProjectFile = m_ProjectFile + ".list";
-            if (!File.Exists(m_Path + m_ProjectFile))
+            if (!File.Exists(m_ProjectFile))
             {
                 Utils.iSetWarning("[WARNING]: Unable to load project file " + m_ProjectFile);
             }
@@ -22,7 +21,7 @@ namespace KG.Unpacker
             Int32 i = 0;
             m_HashList.Clear();
 
-            StreamReader TProjectFile = new StreamReader(m_Path + m_ProjectFile);
+            StreamReader TProjectFile = new StreamReader(m_ProjectFile);
             while ((m_Line = TProjectFile.ReadLine()) != null)
             {
                 UInt64 dwHash = KfcHash.iGetHash(m_Line.ToLower());

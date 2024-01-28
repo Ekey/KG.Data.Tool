@@ -10,6 +10,7 @@ namespace KG.Unpacker
 
         public static void iDoIt(String m_DirFile, String m_DstFolder)
         {
+            KfcList.iLoadProject();
             using (FileStream TDirStream = File.OpenRead(m_DirFile))
             {
                 var m_Header = new KfcHeader();
@@ -64,14 +65,17 @@ namespace KG.Unpacker
                     String m_FileName = KfcList.iGetNameFromHashList(m_Entry.dwHashName);
                     String m_FullPath = m_DstFolder + m_FileName.Replace("/", @"\");
 
-                    Utils.iSetInfo("[UNPACKING]: " + m_FileName);
-                    Utils.iCreateDirectory(m_FullPath);
+                    if (!File.Exists(m_FullPath))
+                    {
+                        Utils.iSetInfo("[UNPACKING]: " + m_FileName);
+                        Utils.iCreateDirectory(m_FullPath);
 
-                    TDataStream.Seek(m_Entry.dwOffset, SeekOrigin.Begin);
+                        TDataStream.Seek(m_Entry.dwOffset, SeekOrigin.Begin);
 
-                    var lpBuffer = TDataStream.ReadBytes(m_Entry.dwCompressedSize);
+                        var lpBuffer = TDataStream.ReadBytes(m_Entry.dwCompressedSize);
 
-                    File.WriteAllBytes(m_FullPath, lpBuffer);
+                        File.WriteAllBytes(m_FullPath, lpBuffer);
+                    }
                 }
 
                 TDataStream.Dispose();
