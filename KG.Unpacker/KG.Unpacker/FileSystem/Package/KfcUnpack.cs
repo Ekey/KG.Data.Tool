@@ -56,7 +56,7 @@ namespace KG.Unpacker
                 TDirStream.Dispose();
             }
 
-            String m_DataFile = Path.GetDirectoryName(m_DirFile) + Path.GetFileNameWithoutExtension(m_DirFile) + ".kfc_data";
+            String m_DataFile = Path.GetDirectoryName(m_DirFile) + @"\" + Path.GetFileNameWithoutExtension(m_DirFile) + ".kfc_data";
             using (FileStream TDataStream = File.OpenRead(m_DataFile))
             {
                 foreach (var m_Entry in m_EntryTable)
