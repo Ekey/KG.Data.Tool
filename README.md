@@ -1,6 +1,9 @@
 # KG.Data.Tool :see_no_evil:
 Tool for extract kfc_data archives from games developed by [Keen Games](https://www.keengames.com/games)
 
+> [!warning]
+> The Projects folder must be in the tool folder, don't forget to copy it :) 
+
 # Games
 | Game   | Steam   | SteamDB   |
 |---      |---    |---    |
