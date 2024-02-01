@@ -57,4 +57,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>C:\Windows\System32\xcopy "$(SolutionDir)$(TargetName)\Projects\*.*" "$(SolutionDir)$(ProjectName)\bin\$(Configuration)\Projects\" /Y /I /E</PreBuildEvent>
+  </PropertyGroup>
 </Project>
