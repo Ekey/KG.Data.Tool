@@ -5,7 +5,7 @@ Tool for extract kfc_data archives from games developed by [Keen Games](https://
 > KG.Unpacker "**INPUT_KFC_DIR_FILE**" "**OUTPUT_DIRECTORY**"
 
 ### Example
-> KG.Unpacker "**E:\Games\Steam\steamapps\common\Enshrouded**" "**D:\Unpacked**"
+> KG.Unpacker "**E:\Games\Steam\steamapps\common\Enshrouded\enshrouded.kfc_dir**" "**D:\Unpacked**"
 
 > [!warning]
 > The Projects folder must be in the tool folder, don't forget to copy it :)
@@ -20,7 +20,7 @@ Tool for creating your own kfc_data archives
 > KG.Packer "**D:\Unpacked**" "**E:\Games\Enshrouded\super_archive**"
 
 > [!important]
-> The output file must be without an extension
+> The output archive filename must be without an extension
 
 # Games
 | Game   | Steam   | SteamDB   |
