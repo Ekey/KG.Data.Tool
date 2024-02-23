@@ -19,7 +19,7 @@ namespace KG.Packer
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("[Usage]");
                 Console.WriteLine("    KG.Packer <m_Input_Directory> <m_Output_File>");
-                Console.WriteLine("    m_Kfc_File - Source of directory");
+                Console.WriteLine("    m_Input_Directory - Source of directory");
                 Console.WriteLine("    m_Output_File - Destination of archive name file (without extension)\n");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Yellow;
